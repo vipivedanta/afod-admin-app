@@ -8,8 +8,19 @@ import {
   CImg
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
+import {Auth} from 'aws-amplify'
+import  { withRouter } from 'react-router-dom'
+const TheHeaderDropdown = (props) => {
 
-const TheHeaderDropdown = () => {
+  const onSignOutClick = async ()=>{
+      try {
+        await Auth.signOut();
+        props.history.push("/");
+      } catch (error) {
+          console.log('error signing out: ', error);
+      }
+   }
+   
   return (
     <CDropdown
       inNav
@@ -26,67 +37,67 @@ const TheHeaderDropdown = () => {
         </div>
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
-        <CDropdownItem
+        {/* <CDropdownItem
           header
           tag="div"
           color="light"
           className="text-center"
         >
           <strong>Account</strong>
-        </CDropdownItem>
-        <CDropdownItem>
+        </CDropdownItem> */}
+        {/* <CDropdownItem>
           <CIcon name="cil-bell" className="mfe-2" /> 
           Updates
           <CBadge color="info" className="mfs-auto">42</CBadge>
-        </CDropdownItem>
-        <CDropdownItem>
+        </CDropdownItem> */}
+        {/* <CDropdownItem>
           <CIcon name="cil-envelope-open" className="mfe-2" /> 
           Messages
           <CBadge color="success" className="mfs-auto">42</CBadge>
-        </CDropdownItem>
-        <CDropdownItem>
+        </CDropdownItem> */}
+        {/* <CDropdownItem>
           <CIcon name="cil-task" className="mfe-2" /> 
           Tasks
           <CBadge color="danger" className="mfs-auto">42</CBadge>
-        </CDropdownItem>
-        <CDropdownItem>
+        </CDropdownItem> */}
+        {/* <CDropdownItem>
           <CIcon name="cil-comment-square" className="mfe-2" /> 
           Comments
           <CBadge color="warning" className="mfs-auto">42</CBadge>
-        </CDropdownItem>
-        <CDropdownItem
+        </CDropdownItem> */}
+        {/* <CDropdownItem
           header
           tag="div"
           color="light"
           className="text-center"
         >
           <strong>Settings</strong>
-        </CDropdownItem>
-        <CDropdownItem>
+        </CDropdownItem> */}
+        {/* <CDropdownItem>
           <CIcon name="cil-user" className="mfe-2" />Profile
-        </CDropdownItem>
-        <CDropdownItem>
+        </CDropdownItem> */}
+        {/* <CDropdownItem>
           <CIcon name="cil-settings" className="mfe-2" /> 
           Settings
-        </CDropdownItem>
-        <CDropdownItem>
+        </CDropdownItem> */}
+        {/* <CDropdownItem>
           <CIcon name="cil-credit-card" className="mfe-2" /> 
           Payments
           <CBadge color="secondary" className="mfs-auto">42</CBadge>
-        </CDropdownItem>
-        <CDropdownItem>
+        </CDropdownItem> */}
+        {/* <CDropdownItem>
           <CIcon name="cil-file" className="mfe-2" /> 
           Projects
           <CBadge color="primary" className="mfs-auto">42</CBadge>
-        </CDropdownItem>
+        </CDropdownItem> */}
         <CDropdownItem divider />
-        <CDropdownItem>
+        <CDropdownItem onClick={onSignOutClick}>
           <CIcon name="cil-lock-locked" className="mfe-2" /> 
-          Lock Account
+          Sign Out
         </CDropdownItem>
       </CDropdownMenu>
     </CDropdown>
   )
 }
 
-export default TheHeaderDropdown
+export default withRouter(TheHeaderDropdown)

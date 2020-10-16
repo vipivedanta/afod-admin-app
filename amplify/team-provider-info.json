@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-afodadminpanel-dev-101343-authRole",
+      "UnauthRoleArn": "arn:aws:iam::657892132796:role/amplify-afodadminpanel-dev-101343-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::657892132796:role/amplify-afodadminpanel-dev-101343-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-afodadminpanel-dev-101343-deployment",
+      "UnauthRoleName": "amplify-afodadminpanel-dev-101343-unauthRole",
+      "StackName": "amplify-afodadminpanel-dev-101343",
+      "StackId": "arn:aws:cloudformation:ap-south-1:657892132796:stack/amplify-afodadminpanel-dev-101343/0380fa80-0ea1-11eb-bbc2-0ac070ec912c",
+      "AmplifyAppId": "d1fd7jhpuhr715"
+    },
+    "categories": {
+      "auth": {
+        "afodadminpanelf927345d": {}
+      }
+    }
+  }
+}
