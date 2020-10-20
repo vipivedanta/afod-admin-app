@@ -38,6 +38,10 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'));
 const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
 
+//NEW ADMIN COMPONENTS
+const Services = React.lazy(() => import('./views/services/Services'));
+const Servicetypes = React.lazy(() => import('./views/servicetypes/Servicetypes'));
+
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -78,7 +82,15 @@ const routes = [
   { path: '/notifications/toaster', name: 'Toaster', component: Toaster },
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/users', exact: true,  name: 'Users', component: Users },
-  { path: '/users/:id', exact: true, name: 'User Details', component: User }
+  { path: '/users/:id', exact: true, name: 'User Details', component: User },
+
+
+  { path: '/servicetypes', name: 'Servicetypes', component: Servicetypes },
+  { path: '/services', name: 'Services', component: Services },
+  { path: '/categories', name: 'Tables', component: Tables },
+  { path: '/sub-categories', name: 'Tables', component: Tables },
+  { path: '/brands', name: 'Tables', component: Tables },
+  { path: '/manage-jobs', name: 'Tables', component: Tables },
 ];
 
 export default routes;

@@ -1,17 +1,17 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
 
-const initialState = {
-  sidebarShow: 'responsive'
-}
+const initialState = {};
 
-const changeState = (state = initialState, { type, ...rest }) => {
-  switch (type) {
-    case 'set':
-      return {...state, ...rest }
-    default:
-      return state
-  }
-}
+const middleware = [thunk];
 
-const store = createStore(changeState)
-export default store
+const store = createStore(
+  rootReducer,
+  initialState,
+  compose(
+    applyMiddleware(...middleware)
+  )
+);
+
+export default store;

@@ -1,11 +1,15 @@
 import React, { Component, useEffect, useState } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import './scss/style.scss';
+import { Provider } from 'react-redux';
+import store from './store';
 
 import Amplify, {Auth} from 'aws-amplify'
 import awsconfig from './aws-exports'
 import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react'
 Amplify.configure(awsconfig);
+
+
 
 const loading = (
   <div className="pt-3 text-center">
@@ -40,6 +44,7 @@ const App = ()=> {
 
   console.log(user);
     return (
+      <Provider store={store}>
       <HashRouter>
           <React.Suspense fallback={loading}>
             <Switch>
@@ -58,6 +63,7 @@ const App = ()=> {
             </Switch>
           </React.Suspense>
       </HashRouter>
+      </Provider>
     );
 }
 
