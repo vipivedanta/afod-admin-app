@@ -14,7 +14,8 @@ const TheHeaderDropdown = (props) => {
 
   const onSignOutClick = async ()=>{
       try {
-        await Auth.signOut();
+        const res = await Auth.signOut();
+        console.log('signing out success: ', res);
         props.history.push("/");
       } catch (error) {
           console.log('error signing out: ', error);
