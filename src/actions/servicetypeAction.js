@@ -28,6 +28,4 @@ export const fetchServiceTypes = () => async dispatch => {
   catch(e){
     console.log('Error in fetchServiceTypes', e)
   }
-  
-
 };

@@ -13,3 +13,6 @@ projects:
         region: ap-south-1
         apiId: sh2nxoardreytjbiu7gngj7qlu
         maxDepth: 2
+extensions:
+  amplify:
+    version: 3

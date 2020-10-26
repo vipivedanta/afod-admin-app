@@ -27,7 +27,7 @@ const getBadge = status => {
 
 
 
-const fields = ['name', 'status']
+const fields = ['name', 'status','Action']
 
 const Servicetypes = (props) => {
 
@@ -57,7 +57,8 @@ const Servicetypes = (props) => {
                         {item.status}
                       </CBadge>
                     </td>
-                  )
+                  ),
+                  'Action' :()=>(<td> <button onClick={() => serviceTypeDetails(props.id)} className='btn btn-info'>Edit</button></td>) 
 
               }}
             />
