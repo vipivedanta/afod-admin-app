@@ -41,6 +41,7 @@ const User = React.lazy(() => import('./views/users/User'));
 //NEW ADMIN COMPONENTS
 const Services = React.lazy(() => import('./views/services/Services'));
 const Servicetypes = React.lazy(() => import('./views/servicetypes/Servicetypes'));
+const EditServiceType = React.lazy(() => import('./views/servicetypes/EditServiceType'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -86,6 +87,7 @@ const routes = [
 
 
   { path: '/servicetypes', name: 'Servicetypes', component: Servicetypes },
+  { path: '/edit-servicetype', name: 'EditServiceType', component: EditServiceType },
   { path: '/services', name: 'Services', component: Services },
   { path: '/categories', name: 'Tables', component: Tables },
   { path: '/sub-categories', name: 'Tables', component: Tables },

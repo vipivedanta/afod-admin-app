@@ -8,6 +8,7 @@ import {
   CDataTable,
   CRow
 } from '@coreui/react'
+import { Link } from 'react-router-dom'
 
 import usersData from '../users/UsersData'
 import { connect } from 'react-redux';
@@ -27,7 +28,7 @@ const getBadge = status => {
 
 
 
-const fields = ['name', 'status']
+const fields = ['name', 'status', 'action']
 
 const Servicetypes = (props) => {
 
@@ -53,9 +54,17 @@ const Servicetypes = (props) => {
                 'status':
                   (item)=>(
                     <td>
-                      <CBadge color={getBadge(item.status)}>
                         {item.status}
-                      </CBadge>
+                    </td>
+                  )
+
+              }}
+              
+              scopedSlots = {{
+                'action':
+                  (item)=>(
+                    <td>
+                      <Link to={`/edit-servicetype/${props.id}`} className="nav-link">Edit</Link>
                     </td>
                   )
 
