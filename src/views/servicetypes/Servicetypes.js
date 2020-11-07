@@ -67,7 +67,7 @@ const Servicetypes = (props) => {
                 'action':
                   (item)=>(
                     <td>
-                      <CLink to={`/edit-servicetype/${item.index}`} className="nav-link">Edit</CLink>
+                      <CLink to={`/edit-servicetype/${item.id}`} className="nav-link">Edit</CLink>
                     </td>
                   )
 
