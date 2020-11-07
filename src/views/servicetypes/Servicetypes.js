@@ -6,7 +6,8 @@ import {
   CCardHeader,
   CCol,
   CDataTable,
-  CRow
+  CRow,
+  CLink
 } from '@coreui/react'
 import { Link } from 'react-router-dom'
 
@@ -34,6 +35,7 @@ const Servicetypes = (props) => {
 
   useEffect(() => {
     props.fetchServiceTypes();
+
   }, [])
 
   return (
@@ -64,7 +66,7 @@ const Servicetypes = (props) => {
                 'action':
                   (item)=>(
                     <td>
-                      <Link to={`/edit-servicetype/${props.id}`} className="nav-link">Edit</Link>
+                      <CLink to={`/edit-servicetype/${item.index}`} className="nav-link">Edit</CLink>
                     </td>
                   )
 

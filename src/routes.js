@@ -87,7 +87,7 @@ const routes = [
 
 
   { path: '/servicetypes', name: 'Servicetypes', component: Servicetypes },
-  { path: '/edit-servicetype', name: 'EditServiceType', component: EditServiceType },
+  { path: '/edit-servicetype/:id', name: 'EditServiceType', component: EditServiceType },
   { path: '/services', name: 'Services', component: Services },
   { path: '/categories', name: 'Tables', component: Tables },
   { path: '/sub-categories', name: 'Tables', component: Tables },
