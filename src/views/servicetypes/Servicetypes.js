@@ -29,7 +29,7 @@ const getBadge = status => {
 
 
 
-const fields = ['name', 'status', 'action']
+const fields = ['serviceType', 'action']
 
 const Servicetypes = (props) => {
 
@@ -38,6 +38,7 @@ const Servicetypes = (props) => {
 
   }, [])
 
+  console.log('props', props);
   return (
     <>
       <CRow>
