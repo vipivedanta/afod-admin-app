@@ -13,7 +13,9 @@ import { Link } from 'react-router-dom'
 
 import usersData from '../users/UsersData'
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {fetchServiceTypes} from '../../actions/servicetypeAction'
+import { FETCH_SERVICETYPES, UPDATE_SERVICETYPES } from './../../actions/types';
 
 const getBadge = status => {
   switch (status) {
@@ -25,20 +27,13 @@ const getBadge = status => {
   }
 }
 
-
-
-
-
 const fields = ['serviceType', 'action']
-
 const Servicetypes = (props) => {
-
+  
   useEffect(() => {
     props.fetchServiceTypes();
-
   }, [])
 
-  console.log('props', props);
   return (
     <>
       <CRow>
@@ -87,4 +82,11 @@ const mapStateToProps = state => ({
   servicetypes: state.serviceType.items,
 });
 
-export default connect(mapStateToProps, { fetchServiceTypes })(Servicetypes);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchServiceTypes:fetchServiceTypes,
+  },dispatch);
+}   
+
+export default connect(mapStateToProps, mapDispatchToProps)(Servicetypes);
+// export default connect(mapStateToProps,mapDispatchToProps)(serviceComponent);

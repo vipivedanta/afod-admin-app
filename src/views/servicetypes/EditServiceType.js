@@ -31,11 +31,18 @@ import {
   CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
+import {connect} from 'react-redux'
 
-const BasicForms = () => {
+const BasicForms = (props) => {
   const [collapsed, setCollapsed] = React.useState(true)
   const [showElements, setShowElements] = React.useState(true)
+  const [serviceTypeName, setserviceTypeName] = React.useState(props.serviceType.serviceType)
 
+  const handleChange=()=>{
+      
+  }
+
+  console.log('props', props.serviceType.serviceType);
   return (
     <>
       <CRow>
@@ -50,7 +57,7 @@ const BasicForms = () => {
                 <CCol xs="12">
                   <CFormGroup>
                     <CLabel htmlFor="name">Service Type</CLabel>
-                    <CInput id="name" placeholder="Enter your name" required />
+                    <CInput id="name" placeholder="Service type name" required value={serviceTypeName} onChange={(e)=>setserviceTypeName(e.target.value)}/>
                   </CFormGroup>
                 </CCol>
               </CRow>
@@ -68,5 +75,12 @@ const BasicForms = () => {
     </>
   )
 }
-
-export default BasicForms
+const mapStateToProps = (state, ownProps)=>{
+    let id= ownProps.match.params.id;
+    return{
+        serviceType: state.serviceType.items.find((item)=>{
+            return item.id===id
+        })
+    }
+}
+export default connect(mapStateToProps)(BasicForms)
