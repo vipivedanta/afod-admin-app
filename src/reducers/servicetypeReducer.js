@@ -2,7 +2,7 @@ import { FETCH_SERVICETYPES, UPDATE_SERVICETYPES } from '../actions/types';
 
 const initialState = {
   items: [],
-  item: {}
+  editItems: {},
 };
 
 export default function(state = initialState, action) {
@@ -15,7 +15,7 @@ export default function(state = initialState, action) {
     case UPDATE_SERVICETYPES:
       return {
         ...state,
-        item: action.payload
+        editItems: action.payload
       };
     default:
       return state;

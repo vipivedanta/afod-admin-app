@@ -20,10 +20,7 @@ export const fetchServiceTypes = () => async dispatch => {
       }));
     
     const uniqueServiceTypes = unique(result, 'serviceType');
-    dispatch({
-      type: FETCH_SERVICETYPES,
-      payload: uniqueServiceTypes
-    })
+    dispatch({type: FETCH_SERVICETYPES,payload: uniqueServiceTypes})
   }
   catch(e){
     console.log('Error in fetchServiceTypes', e)
