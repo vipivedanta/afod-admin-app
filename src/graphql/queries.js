@@ -65,6 +65,7 @@ export const listServices = /* GraphQL */ `
         updatedBy
         brand
         withMaterial
+        service_thumbnail
       }
       nextToken
     }

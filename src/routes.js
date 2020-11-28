@@ -39,9 +39,9 @@ const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
 
 //NEW ADMIN COMPONENTS
-const Services = React.lazy(() => import('./views/services/Services'));
-const Servicetypes = React.lazy(() => import('./views/servicetypes/Servicetypes'));
-const EditServiceType = React.lazy(() => import('./views/servicetypes/EditServiceType'));
+const Services = React.lazy(() => import('./views/services_/Services'));
+const Servicetypes = React.lazy(() => import('./views/services/Services'));
+const EditService = React.lazy(() => import('./views/services/EditService'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -86,9 +86,9 @@ const routes = [
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
 
 
-  { path: '/servicetypes', name: 'Servicetypes', component: Servicetypes },
-  { path: '/edit-servicetype/:id', name: 'EditServiceType', component: EditServiceType },
-  { path: '/services', name: 'Services', component: Services },
+  { path: '/services', name: 'Services', component: Servicetypes },
+  { path: '/edit-service/:id', name: 'EditService', component: EditService },
+  // { path: '/services', name: 'Services', component: Services },
   { path: '/categories', name: 'Tables', component: Tables },
   { path: '/sub-categories', name: 'Tables', component: Tables },
   { path: '/brands', name: 'Tables', component: Tables },

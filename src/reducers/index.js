@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import serviceTypeReducer from './servicetypeReducer';
+import serviceReducer from './serviceReducer';
 
 export default combineReducers({
-    serviceType: serviceTypeReducer
+    services: serviceReducer
 });
