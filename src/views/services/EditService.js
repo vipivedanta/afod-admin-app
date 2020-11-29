@@ -76,6 +76,10 @@ const EditService = (props) => {
             alert(err);
         });
       }
+      else if(payload.oldServiceName == payload.newServiceName){
+        alert('Nothing to update');
+        setisLoading(false);
+      }
       else{
         update(payload);
       }

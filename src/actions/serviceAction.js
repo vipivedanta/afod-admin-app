@@ -71,14 +71,26 @@ export const updateService = (payload) => async dispatch => {
 
 
 const bulkUpdate = (items, payload)=>{
-  items.forEach(element => {
+
+    if(payload.fileUrl){
+      items.forEach(element => {
+            update({
+            id: element.id,
+            serviceType:payload.serviveTypeName,
+            service:payload.newServiceName,
+            service_thumbnail:payload.fileUrl
+          })
+      });
+    }
+    else{
+      items.forEach(element => {
         update({
         id: element.id,
         serviceType:payload.serviveTypeName,
-        service:payload.newServiceName,
-        service_thumbnail:payload.fileUrl
+        service:payload.newServiceName
       })
   });
+    }
 }
 
 
