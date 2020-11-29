@@ -66,6 +66,7 @@ export const listServices = /* GraphQL */ `
         brand
         withMaterial
         service_thumbnail
+        subCategory_thumbnail
       }
       nextToken
     }

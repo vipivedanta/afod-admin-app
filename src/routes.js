@@ -42,6 +42,8 @@ const User = React.lazy(() => import('./views/users/User'));
 const Services = React.lazy(() => import('./views/services_/Services'));
 const Servicetypes = React.lazy(() => import('./views/services/Services'));
 const EditService = React.lazy(() => import('./views/services/EditService'));
+const SubCategories = React.lazy(() => import('./views/subcategories/SubCategories'));
+const EditSubCategory = React.lazy(() => import('./views/subcategories/EditSubCategory'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -90,7 +92,8 @@ const routes = [
   { path: '/edit-service/:id', name: 'EditService', component: EditService },
   // { path: '/services', name: 'Services', component: Services },
   { path: '/categories', name: 'Tables', component: Tables },
-  { path: '/sub-categories', name: 'Tables', component: Tables },
+  { path: '/sub-categories', name: 'SubCategories', component: SubCategories },
+  { path: '/edit-sub-categories/:id', name: 'EditSubCategory', component: EditSubCategory },
   { path: '/brands', name: 'Tables', component: Tables },
   { path: '/manage-jobs', name: 'Tables', component: Tables },
 ];

@@ -13,7 +13,7 @@ import {
 
 import usersData from '../users/UsersData'
 import { connect } from 'react-redux';
-import {listAllServices} from '../../actions/serviceAction'
+import {listAllServices} from '../../actions/subcategoryAction'
 
 const getBadge = status => {
   switch (status) {
@@ -26,9 +26,9 @@ const getBadge = status => {
 }
 
 
-const fields = ['service', 'service_thumbnail', 'action']
+const fields = ['subCategory', 'subCategory_thumbnail', 'action']
 
-const Services = (props) => {
+const SubCategories = (props) => {
 
   useEffect(() => {
     props.listAllServices();
@@ -44,7 +44,7 @@ const Services = (props) => {
             </CCardHeader>
             <CCardBody>
             <CDataTable
-              items={props.service}
+              items={props.subCategories}
               fields={fields}
               itemsPerPage={100}
               pagination
@@ -54,13 +54,13 @@ const Services = (props) => {
                 'action':
                   (item)=>(
                     <td>
-                      <CLink to={`/edit-service/${item.id}`}>Edit</CLink>
+                      <CLink to={`/edit-sub-categories/${item.id}`}>Edit</CLink>
                     </td>
                   ),
-                  'service_thumbnail':
+                  'subCategory_thumbnail':
                   (item)=>(
                     <td>
-                       <CImg src={item.service_thumbnail}  alt="" height={100} width={150}/>
+                       <CImg src={item.subCategory_thumbnail}  alt="" height={100} width={150}/>
                     </td>
                   )
                 }
@@ -77,7 +77,7 @@ const Services = (props) => {
 }
 
 const mapStateToProps = state => ({
-  service: state.services.items,
+  subCategories: state.subCategories.subCategoryItems,
 });
 
-export default connect(mapStateToProps, { listAllServices })(Services);
+export default connect(mapStateToProps, { listAllServices })(SubCategories);
