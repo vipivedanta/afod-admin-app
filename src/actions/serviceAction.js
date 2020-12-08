@@ -37,7 +37,8 @@ export const getService = (id) => async dispatch => {
       {
         filter:{ 
           id:{beginsWith: id}
-        }
+        },
+        limit:2000
       }));
       
     const uniqueServiceTypes = unique(result, 'serviceType');
